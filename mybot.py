@@ -126,7 +126,7 @@ help_text = '\n\
     !add {video-game} -> Add the video game you typed to your favorite list\n\
     !fav -> Display your favorite video games list\n\
     !clear -> Clear your favorite video games list\n\
-    !rec -> Recomand you 10 video games that you might like depending your favorite list'
+    !recommandation -> Recomand you 10 video games that you might like depending your favorite list'
 
 responses={
     'greet':'Hello! How can I help you?',
@@ -200,7 +200,7 @@ async def on_message(message):
             allFavList[message.author.name]=[]
         response = "your favorites list has been successfully emptied"
 
-    elif message.content[0:5] == '!pred':
+    elif message.content[0:15] == '!recommandation':
         if message.author.name in allFavList:
             if len(allFavList[message.author.name])>0:
                 myRec = recomandGame(allFavList[message.author.name])
